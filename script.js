@@ -7,6 +7,12 @@ function computerPlay(game) {
 }
 
 // console.log(computerPlay(game));
+function capitalize(playerSelection) {
+    return (
+        playerSelection.charAt(0).toUpperCase() +
+        playerSelection.slice(1).toLowerCase()
+    );
+}
 
 function playRound(playerSelection, computerSelection) {
     if (computerSelection === "Rock" || "Paper" || "Scissors") {
@@ -14,26 +20,55 @@ function playRound(playerSelection, computerSelection) {
             return "The Result is a Tie!";
         }
         if (computerSelection === "Rock") {
-            if (playerSelection === "Paper")
-                return `You Win! ${playerSelection} Beats ${computerSelection}!`;
-        } else {
-            return `You lose ${computerSelection} beats ${playerSelection}!`;
+            if (playerSelection === "Paper") {
+                playerScore++;
+                return `You Win! ${playerSelection} beats ${computerSelection}!`;
+            } else {
+                computerScore++;
+                return `You lose ${computerSelection} beats ${playerSelection}!`;
+            }
         }
         if (computerSelection === "Paper") {
-            if (playerSelection === "Scissors")
+            if (playerSelection === "Scissors") {
+                playerScore++;
                 return `You win! ${playerSelection} beats ${computerSelection}`;
-        } else {
-            return `You lose ${computerSelection} beats ${playerSelection}!`;
+            } else {
+                computerScore++;
+                return `You lose ${computerSelection} beats ${playerSelection}!`;
+            }
         }
         if (computerSelection === "Scissors") {
-            if (playerSelection === "Rock")
+            if (playerSelection === "Rock") {
+                playerScore++;
                 return `You win! ${playerSelection} beats ${computerSelection}`;
-        } else {
-            return `You lose ${computerSelection} beats ${playerSelection}!`;
+            } else {
+                computerScore++;
+                return `You lose ${computerSelection} beats ${playerSelection}!`;
+            }
         }
     }
 }
 
-let playerSelection = "Paper";
-let computerSelection = computerPlay(game);
-console.log(playRound(playerSelection, computerSelection));
+var playerSelection = capitalize(prompt("Select rock, paper, or scissors:"));
+var computerSelection = computerPlay(game);
+let playerScore = 0;
+let computerScore = 0;
+playRound(playerSelection, computerSelection);
+alert(playRound());
+var playerSelection = capitalize(prompt("Select rock, paper, or scissors:"));
+var computerSelection = computerPlay(game);
+playRound(playerSelection, computerSelection);
+alert(playRound());
+var playerSelection = capitalize(prompt("Select rock, paper, or scissors:"));
+var computerSelection = computerPlay(game);
+playRound(playerSelection, computerSelection);
+alert(playRound());
+var playerSelection = capitalize(prompt("Select rock, paper, or scissors:"));
+var computerSelection = computerPlay(game);
+playRound(playerSelection, computerSelection);
+alert(playRound());
+var playerSelection = capitalize(prompt("Select rock, paper, or scissors:"));
+var computerSelection = computerPlay(game);
+playRound(playerSelection, computerSelection);
+alert(playRound());
+console.log("Player:", playerScore, "Computer:", computerScore);
