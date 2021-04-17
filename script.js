@@ -7,12 +7,11 @@ function computerPlay(game) {
 }
 
 // console.log(computerPlay(game));
-function capitalize(playerSelection) {
-    return (
-        playerSelection.charAt(0).toUpperCase() +
-        playerSelection.slice(1).toLowerCase()
-    );
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
+
+string = playerSelection;
 
 function playRound(playerSelection, computerSelection) {
     if (computerSelection === "Rock" || "Paper" || "Scissors") {
@@ -21,54 +20,51 @@ function playRound(playerSelection, computerSelection) {
         }
         if (computerSelection === "Rock") {
             if (playerSelection === "Paper") {
-                playerScore++;
                 return `You Win! ${playerSelection} beats ${computerSelection}!`;
             } else {
-                computerScore++;
                 return `You lose ${computerSelection} beats ${playerSelection}!`;
             }
         }
         if (computerSelection === "Paper") {
             if (playerSelection === "Scissors") {
-                playerScore++;
                 return `You win! ${playerSelection} beats ${computerSelection}`;
             } else {
-                computerScore++;
                 return `You lose ${computerSelection} beats ${playerSelection}!`;
             }
         }
         if (computerSelection === "Scissors") {
             if (playerSelection === "Rock") {
-                playerScore++;
                 return `You win! ${playerSelection} beats ${computerSelection}`;
             } else {
-                computerScore++;
                 return `You lose ${computerSelection} beats ${playerSelection}!`;
             }
         }
     }
 }
 
-var playerSelection = capitalize(prompt("Select rock, paper, or scissors:"));
-var computerSelection = computerPlay(game);
+function fullGame(playerSelect) {
+    let playerSelection = capitalize(playerSelect);
+    let computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+    playRound(playerSelection, computerSelection);
+}
 let playerScore = 0;
 let computerScore = 0;
-playRound(playerSelection, computerSelection);
-alert(playRound());
-var playerSelection = capitalize(prompt("Select rock, paper, or scissors:"));
-var computerSelection = computerPlay(game);
-playRound(playerSelection, computerSelection);
-alert(playRound());
-var playerSelection = capitalize(prompt("Select rock, paper, or scissors:"));
-var computerSelection = computerPlay(game);
-playRound(playerSelection, computerSelection);
-alert(playRound());
-var playerSelection = capitalize(prompt("Select rock, paper, or scissors:"));
-var computerSelection = computerPlay(game);
-playRound(playerSelection, computerSelection);
-alert(playRound());
-var playerSelection = capitalize(prompt("Select rock, paper, or scissors:"));
-var computerSelection = computerPlay(game);
-playRound(playerSelection, computerSelection);
-alert(playRound());
+
+function winner(playerScore, computerScore) {
+    if (playerScore > computerScore) {
+        return "Good Job! You win the game!";
+    }
+    if (computerScore > playerScore) {
+        return "Try again. You lost to the computer";
+    }
+    if (playerScore === computerScore) {
+        return "Too bad, you didn't win or lose.";
+    }
+}
+var playerSelection = "Rock";
+var computerSelection = game;
+fullGame();
 console.log("Player:", playerScore, "Computer:", computerScore);
+console.log(winner(playerScore, computerScore));
