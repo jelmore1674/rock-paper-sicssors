@@ -36,25 +36,33 @@ function playRound(playerSelection) {
                 return `You win! ${playerSelection} beats ${computerSelection}`;
             }
         }
-        if (computerSelection === "Paper" && playerSelection === "Rock") {
-            return (
-                `You Lose! ${computerSelection} beats ${playerSelection}!`,
-                computerScore++
-            );
+        if (computerSelection === "Paper") {
+            if (playerSelection === "Rock") {
+                return (
+                    `You Lose! ${computerSelection} beats ${playerSelection}!`,
+                    lose()
+                );
+            }
         }
-        if (computerSelection === "Rock" && playerSelection === "Scissors") {
-            return (
-                `You Lose! ${computerSelection} beats ${playerSelection}!`,
-                computerScore++
-            );
+        if (computerSelection === "Rock") {
+            if (playerSelection === "Scissors") {
+                return (
+                    `You Lose! ${computerSelection} beats ${playerSelection}!`,
+                    lose()
+                );
+            }
         }
-        if (computerSelection === "Scissors" && playerSelection === "Paper") {
-            return (
-                `You Lose! ${computerSelection} beats ${playerSelection}!`,
-                computerScore++
-            );
+        if (computerSelection === "Scissors") {
+            if (playerSelection === "Paper") {
+                lose();
+                return `You Lose! ${computerSelection} beats ${playerSelection}!`;
+            }
         }
     }
+}
+
+function lose() {
+    computerScore++;
 }
 
 let playerSelection = "rock";
