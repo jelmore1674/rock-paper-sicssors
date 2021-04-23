@@ -50,14 +50,44 @@ function fullGame() {
     }
 
     playRound(playerSelection);
+    r2 = playRound(playerSelection);
+    if (r2.includes(win)) {
+        playerScore++;
+        return r2;
+    } else if (r2.includes(loss)) {
+        computerScore++;
+        return r2;
+    } else if (r2.includes(tie)) {
+        return r2;
+    }
     playRound(playerSelection);
+    r3 = playRound(playerSelection);
+    if (r3.includes(win)) {
+        playerScore++;
+        return r3;
+    } else if (r3.includes(loss)) {
+        computerScore++;
+        return r3;
+    } else if (r3.includes(tie)) {
+        return r3;
+    }
     playRound(playerSelection);
+    r4 = playRound(playerSelection);
+    if (r4.includes(win)) {
+        playerScore++;
+        return r4;
+    } else if (r4.includes(loss)) {
+        computerScore++;
+        return r4;
+    } else if (r4.includes(tie)) {
+        return r4;
+    }
     playRound(playerSelection);
 }
 
 let playerScore = 0;
 let computerScore = 0;
-let playerSelection = "paper";
+let playerSelection = "Rock";
 fullGame();
 console.log(fullGame());
 console.log(playerSelection);
