@@ -75,13 +75,13 @@ function playGame() {
     player.textContent = `${playerScore}`;
     computer.textContent = `${computerScore}`;
     if (playerScore == 5) {
-        output.textContent = "You survived the matrix";
+        output.textContent = "You survived the matrix!";
         playerScore = 0;
         compScore = 0;
         player.textContent = `${playerScore}`;
         computer.textContent = `${computerScore}`;
     } else if (computerScore == 5) {
-        output.textContent = "GAME OVER! You are stuck in the matrix";
+        output.textContent = "GAME OVER! You are stuck in the matrix!";
         playerScore = 0;
         computerScore = 0;
         player.textContent = `${playerScore}`;
