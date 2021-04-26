@@ -31,3 +31,8 @@ code, but I am very happy I figured this out! xD
 
 I am now working on a GUI for the Rock, Paper, Scissors game. Learning
 Javascript DOM elements.
+
+## Update 4
+
+I now have a basic GUI, still have some cleaning up, but overall it is
+functional.

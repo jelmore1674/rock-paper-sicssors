@@ -1,0 +1,44 @@
+/** @format */
+
+html body {
+    margin: 0;
+    background-color: #94d1be;
+}
+
+#container {
+    background-color: #94d1be;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.btn {
+    background-color: #94d1be;
+    margin-bottom: 30px;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #283d3b;
+}
+
+#output {
+    font-size: x-large;
+    text-align: center;
+    padding: 3%;
+}
+
+#score-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#player-score {
+    border: 2px solid #283d3b;
+    padding: 10%;
+}
+
+#computer-score {
+    border: 2px solid #283d3b;
+    padding: 10%;
+}
