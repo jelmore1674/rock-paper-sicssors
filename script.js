@@ -2,10 +2,10 @@
 let playerScore = 0;
 let computerScore = 0;
 const player = document.querySelector("#player-score");
-player.textContent = `Player Score: ${playerScore}`;
+player.textContent = `${playerScore}`;
 
 const computer = document.querySelector("#computer-score");
-computer.textContent = `Computer Score: ${computerScore}`;
+computer.textContent = `${computerScore}`;
 
 const output = document.querySelector("#output");
 output.textContent = "Think you can beat the Matrix?";
@@ -72,19 +72,19 @@ function playRound() {
 function playGame() {
     output.textContent = "Choose Rock, Paper, or Scissors";
     playRound();
-    player.textContent = `Player Score: ${playerScore}`;
-    computer.textContent = `Computer Score: ${computerScore}`;
+    player.textContent = `${playerScore}`;
+    computer.textContent = `${computerScore}`;
     if (playerScore == 5) {
         output.textContent = "You survived the matrix";
         playerScore = 0;
         compScore = 0;
-        player.textContent = `Player Score: ${playerScore}`;
-        computer.textContent = `Computer Score: ${computerScore}`;
+        player.textContent = `${playerScore}`;
+        computer.textContent = `${computerScore}`;
     } else if (computerScore == 5) {
         output.textContent = "GAME OVER! You are stuck in the matrix";
         playerScore = 0;
         computerScore = 0;
-        player.textContent = `Player Score: ${playerScore}`;
-        computer.textContent = `Computer Score: ${computerScore}`;
+        player.textContent = `${playerScore}`;
+        computer.textContent = `${computerScore}`;
     }
 }

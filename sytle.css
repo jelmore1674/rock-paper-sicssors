@@ -23,7 +23,8 @@ html body {
 }
 
 #output {
-    font-size: x-large;
+    font-size: xx-large;
+    font-weight: bolder;
     text-align: center;
     padding: 3%;
 }
@@ -33,12 +34,25 @@ html body {
     justify-content: space-evenly;
 }
 
-#player-score {
+#score-box {
     border: 2px solid #283d3b;
     padding: 10%;
 }
 
+h3 {
+    margin-top: -100px;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#player-score {
+    font-size: 3.5em;
+    text-align: center;
+    font-weight: bolder;
+}
+
 #computer-score {
-    border: 2px solid #283d3b;
-    padding: 10%;
+    font-size: 3.5em;
+    text-align: center;
+    font-weight: bolder;
 }
